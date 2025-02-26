@@ -4,6 +4,7 @@ import 'dotenv/config';
 import cookieParser from "cookie-parser";
 import connectDB from "./config/mongodb.js";
 import employeeRoute from "./routes/employeeRoute.js";
+import adminRoute from "./routes/adminRoute.js";
 
 
 
@@ -17,6 +18,7 @@ app.use(cors({credentials: true }));
 
 connectDB()
 app.use('/employee',employeeRoute)
+app.use('/admin',adminRoute)
 
 
 app.get('/', (req, res) => {
