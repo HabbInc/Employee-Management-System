@@ -6,6 +6,11 @@ import {  updateProjectProgress, viewAssignedProjects } from "../controllers/pro
 
 const employeeRoute = express.Router();
 
+employeeRoute.post('/register',register);
+employeeRoute.post('/login',login);
+employeeRoute.post('/logout',logout);
+
+=======
 employeeRoute.post('/register',register)
 employeeRoute.post('/login',login)
 employeeRoute.post('/logout',logout)
@@ -14,4 +19,5 @@ employeeRoute.get('/get-leave',userAuth,getEmployeeLeaves)
 employeeRoute.put('/cancel/:leaveId',userAuth,cancelLeave)
 employeeRoute.get('/view-assigned-projects',userAuth,viewAssignedProjects)
 employeeRoute.put('/get-projects/:id',userAuth,updateProjectProgress)
+
 export default employeeRoute
