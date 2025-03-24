@@ -1,5 +1,16 @@
 import mongoose from "mongoose";
 
+const AttendanceSchema = new mongoose.Schema({
+  date: { type: Date, required: true, default: Date.now },
+  clockIn: { type: Date },
+  clockOut: { type: Date },
+  breakStart: { type: Date },
+  breakEnd: { type: Date },
+  breakDuration: { type: Number, default: 0},
+  totalHours: { type: Number, default: 0},
+});
+
+
 const employeeSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
@@ -31,17 +42,9 @@ const employeeSchema = new mongoose.Schema({
     default: "Active",
 
   },
-  attendance: [
-    {
-      date: { type: Date, required: true },
-      clockIn: { type: Date },
-      clockOut: { type: Date },
-      totalHours: { type: Number, default: 0 },
-    },
-  ],
 
-},{ timestamps: true });
+  attendance: [AttendanceSchema],
+  },{ timestamps: true });
 
-const EmployeeModel =
-  mongoose.models.employee || mongoose.model("employee", employeeSchema);
+const EmployeeModel =mongoose.models.employee || mongoose.model("employee", employeeSchema);
 export default EmployeeModel;

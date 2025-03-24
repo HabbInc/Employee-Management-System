@@ -4,6 +4,7 @@ import { getAllLeaves, updateLeaveStatus } from "../controllers/leaveController.
 import authAdmin from "../middleware/authAdmin.js";
 import { createProject, deleteProject, getAllProjects, updateProject } from "../controllers/projectController.js";
 import upload from "../middleware/multer.js";
+import { createSalary, deleteSalary, getAllSalaries, updateSalary } from "../controllers/salaryController.js";
 
 const adminRoute = express.Router();
 
@@ -14,5 +15,10 @@ adminRoute.post('/project',authAdmin,upload.single('image'),createProject)
 adminRoute.get('/all-projects',authAdmin,getAllProjects)
 adminRoute.put('/update-project/:id',authAdmin,updateProject)
 adminRoute.delete('/delete-project/:id',authAdmin,deleteProject)
+
+adminRoute.post('/createSalary',authAdmin,createSalary)
+adminRoute.get('/getsalaries',authAdmin,getAllSalaries)
+adminRoute.put('/updateSalary/:id',authAdmin,updateSalary)
+adminRoute.delete('/deleteSalary/:id',authAdmin,deleteSalary)
 
 export default adminRoute
