@@ -10,7 +10,7 @@ const ProjectSchema = new mongoose.Schema({
     deadline: { type: Date, required: true },
     assignedEmployees: [
       {
-        employeeId: { type: mongoose.Schema.Types.ObjectId, ref: "Employee" },
+        employeeId: { type: mongoose.Schema.Types.ObjectId, ref: "employee" },
         role: { type: String }, // Developer, Designer, Manager
         assignedDate: { type: Date, default: Date.now },
       },
