@@ -1,11 +1,15 @@
 import mongoose from "mongoose";
 
 const salarySchema = new mongoose.Schema({
-    employeeId: {type: mongoose.Schema.Types.ObjectId, ref: "employee", required: true},
+    employeeId: {type: mongoose.Schema.Types.ObjectId, ref: "employee"},
     employeeName: {type: String, required: true},
-    month: {type: Number, required: true, min: 1, max: 12},
+    month: {
+        type: String,
+        enum: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        required: true,
+      },
     year: {type: Number, required: true},
-    amount:{type: Number, required: true},
+    amount:{type: Number},
     status:{type: String, enum: ["Pending", "Paid", "Filed"], default: "Pending"},
     paymentDate: {type: Date},
     bonuses: [{type: {type: String}, amount: Number}],

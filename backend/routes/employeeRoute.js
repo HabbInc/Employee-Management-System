@@ -16,7 +16,7 @@ employeeRoute.post('/login',login);
 employeeRoute.post('/logout',logout);
 
 
-employeeRoute.post('/register',register)
+employeeRoute.post('/register',completeRegistration)
 employeeRoute.post('/login',login)
 employeeRoute.post('/logout',logout)
 employeeRoute.post('/apply-leave',userAuth,applyLeave)
@@ -27,7 +27,6 @@ employeeRoute.put('/get-projects/:id',userAuth,updateProjectProgress)
 employeeRoute.post('/complete-registration',completeRegistration)
 employeeRoute.get('/user-profile',userAuth,profile)
 employeeRoute.put('/update-profile',userAuth,upload.single('image'),updateProfile)
-
 
 employeeRoute.get('/getSalarybyId/:id',userAuth,getSalaryById)
 

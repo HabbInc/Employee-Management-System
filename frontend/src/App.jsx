@@ -14,6 +14,7 @@ import Login from "./Pages/Login";
 import { AdminContext } from "./context/AdminContext";
 import { EmployeeContext } from "./context/EmployeeContext";
 import Project from "./Pages/Admin/Project";
+import SalaryManagement from "./Pages/Admin/SalaryManagement";
 
 const App = () => {
   const { aToken } = useContext(AdminContext);
@@ -34,6 +35,8 @@ const App = () => {
               <>
                 <Route path="/" />
                 <Route path="/admin/projects" element={<Project />} />
+                <Route path="/admin/salary" element={<SalaryManagement />} />
+
               </>
             )}
             {token && <Route path="/employee-dashboard" />}
