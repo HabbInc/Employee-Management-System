@@ -5,10 +5,11 @@ import cookieParser from "cookie-parser";
 import connectDB from "./config/mongodb.js";
 import employeeRoute from "./routes/employeeRoute.js";
 
+
 import salaryRoute from "./routes/salaryRoute.js";
+
 import adminRoute from "./routes/adminRoute.js";
-
-
+import attendanceRoute from "./routes/attendanceRoutes.js";
 
 
 const app = express();
@@ -23,10 +24,14 @@ app.use(cors({credentials: true }));
 connectDB()
 
 
+
 app.use('/salary',salaryRoute);
+
+
 
 app.use('/employee',employeeRoute)
 app.use('/admin',adminRoute)
+app.use('/api/attendance', attendanceRoute)
 
 
 
