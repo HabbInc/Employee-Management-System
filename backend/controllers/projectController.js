@@ -78,7 +78,10 @@ export const createProject = async (req, res) => {
 //admin get all projects
 export const getAllProjects = async (req, res) => {
   try {
-    const projects = await ProjectModel.find();
+    // Fetch projects and populate the assignedEmployees with employee names
+    const projects = await ProjectModel.find()
+      .populate('assignedEmployees.employeeId', 'name') // Populate employeeId with the 'name' field
+      .exec();
 
     if (!projects || projects.length === 0) {
       return res
@@ -86,7 +89,20 @@ export const getAllProjects = async (req, res) => {
         .json({ success: false, message: "No projects found" });
     }
 
-    res.status(200).json({ success: true, projects });
+    // Optionally, format the projects data to include employeeName
+    const formattedProjects = projects.map(project => {
+      const assignedEmployees = project.assignedEmployees.map(employee => ({
+        ...employee._doc, // Retaining the original employee data
+        employeeName: employee.employeeId ? employee.employeeId.name : 'N/A', // Add employee name
+      }));
+
+      return {
+        ...project._doc, // Project details
+        assignedEmployees, // Updated assigned employees with name
+      };
+    });
+
+    res.status(200).json({ success: true, projects: formattedProjects });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
