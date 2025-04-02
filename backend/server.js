@@ -22,7 +22,7 @@ connectDB()
 
 app.use('/employee',employeeRoute)
 app.use('/admin',adminRoute)
-app.use('/api/attendance', attendanceRoute)
+app.use('/api/attendance', attendanceRoute);
 
 
 

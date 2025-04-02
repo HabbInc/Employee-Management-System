@@ -24,7 +24,7 @@ const Sidebarhere = () => {
     { icon: <FaBriefcase />, label: "Tasks", url: "/employee/tasks" },
     { icon: <FaCalendarCheck />, label: "Attendance", url: "/employee/attendance" },
     { icon: <MdPeople />, label: "Clients", url: "/employee/clients" },
-    { icon: <MdOutlineHolidayVillage />, label: "Holidays", url: "/employee/holidays" },
+    { icon: <MdOutlineHolidayVillage />, label: "Salary", url: "/employee/salary" },
   ];
 
   return (
