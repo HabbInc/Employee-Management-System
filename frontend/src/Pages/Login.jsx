@@ -30,6 +30,12 @@ const Login = () => {
       if (state === "Admin") {
         localStorage.setItem("aToken", response.data.token);
         setAToken(response.data.token);
+
+        // ✅ Save adminId if available
+        if (response.data.admin && response.data.admin._id) {
+          localStorage.setItem("adminId", response.data.admin._id);
+        }
+
       } else {
         localStorage.setItem("token", response.data.token);
         setToken(response.data.token);

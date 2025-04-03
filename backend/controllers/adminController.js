@@ -17,7 +17,8 @@ export const adminLogin = async (req, res) => {
         );
   
         // Send the token to the client
-        return res.json({ success: true, token });
+        return res.json({ success: true, token, admin: { _id: "admin-static-id", email } });
+
       } else {
         return res.status(400).json({ success: false, message: 'Invalid credentials' });
       }
