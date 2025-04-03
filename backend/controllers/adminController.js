@@ -28,7 +28,7 @@ export const adminLogin = async (req, res) => {
   };
 
 
-  //creaqte new Employee
+  //create new Employee
   export const createEmployee = async (req, res) => {
     const { name, email, role } = req.body;
     const userRole = role || 'employee';

@@ -15,7 +15,7 @@ const Sidebarhere = () => {
     { icon: <FaBriefcase />, label: "Projects", url: "/admin/projects" },
     { icon: <FaCalendarCheck />, label: "Attendance", url: "/admin/attendance" },
     { icon: <MdPeople />, label: "Clients", url: "/admin/clients" },
-    { icon: <MdOutlineHolidayVillage />, label: "Holidays", url: "/admin/holidays" },
+    { icon: <MdOutlineHolidayVillage />, label: "Salary", url: "/admin/salary" },
   ];
 
   const employeeNavItems = [
@@ -24,7 +24,7 @@ const Sidebarhere = () => {
     { icon: <FaBriefcase />, label: "Tasks", url: "/employee/tasks" },
     { icon: <FaCalendarCheck />, label: "Attendance", url: "/employee/attendance" },
     { icon: <MdPeople />, label: "Clients", url: "/employee/clients" },
-    { icon: <MdOutlineHolidayVillage />, label: "Holidays", url: "/employee/holidays" },
+    { icon: <MdOutlineHolidayVillage />, label: "Salary", url: "/employee/salary" },
   ];
 
   return (

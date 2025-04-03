@@ -28,7 +28,6 @@ employeeRoute.post('/complete-registration',completeRegistration)
 employeeRoute.get('/user-profile',userAuth,profile)
 employeeRoute.put('/update-profile',userAuth,upload.single('image'),updateProfile)
 
-
 employeeRoute.get('/getSalarybyId/:id',userAuth,getSalaryById)
 
 export default employeeRoute

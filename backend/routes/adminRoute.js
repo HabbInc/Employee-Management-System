@@ -18,8 +18,8 @@ adminRoute.put('/update-project/:id',authAdmin,updateProject)
 adminRoute.delete('/delete-project/:id',authAdmin,deleteProject)
 adminRoute.post('/create-employee',authAdmin,createEmployee)
 
-adminRoute.post('/createSalary',authAdmin,createSalary)
-adminRoute.get('/getsalaries',authAdmin,getAllSalaries)
+adminRoute.post('/createSalary',createSalary)
+adminRoute.get('/all-salaries',authAdmin,getAllSalaries)
 adminRoute.put('/updateSalary/:id',authAdmin,updateSalary)
 adminRoute.delete('/deleteSalary/:id',authAdmin,deleteSalary)
 
