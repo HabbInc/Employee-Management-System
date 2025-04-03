@@ -16,7 +16,7 @@ employeeRoute.post('/login',login);
 employeeRoute.post('/logout',logout);
 
 
-employeeRoute.post('/register',register)
+employeeRoute.post('/register',completeRegistration)
 employeeRoute.post('/login',login)
 employeeRoute.post('/logout',logout)
 employeeRoute.post('/apply-leave',userAuth,applyLeave)

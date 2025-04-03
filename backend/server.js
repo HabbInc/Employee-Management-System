@@ -6,7 +6,6 @@ import connectDB from "./config/mongodb.js";
 import employeeRoute from "./routes/employeeRoute.js";
 
 
-import salaryRoute from "./routes/salaryRoute.js";
 
 import adminRoute from "./routes/adminRoute.js";
 import attendanceRoute from "./routes/attendanceRoutes.js";
@@ -25,7 +24,6 @@ connectDB()
 
 
 
-app.use('/salary',salaryRoute);
 
 
 
